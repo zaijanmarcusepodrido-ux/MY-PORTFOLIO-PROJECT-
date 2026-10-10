@@ -9,13 +9,12 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <script src="Experiment.js" defer></script>
+    <script src="script.js" defer></script>
 </head>
 <body>
     <header class="navbar">
         <a href="#home" class="logo"><span>&lt;/&gt;</span> ZAIJAN<span class="logo-end">.dev</span></a>
-
-        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
+        <button class="menu-toggle" id="menuToggle" aria-label="Toggle navigation">☰</button>
 
         <nav class="nav-links" id="navLinks">
             <a href="#home" class="nav-link active">Home</a>
@@ -26,7 +25,7 @@
         </nav>
 
         <div class="nav-controls">
-            <select id="themeColor" aria-label="Choose accent color">
+            <select id="themeColor" aria-label="Choose theme">
                 <option value="teal">Teal + Lime</option>
                 <option value="green">Green</option>
                 <option value="sky">Sky Blue</option>
@@ -35,30 +34,25 @@
                 <option value="orange">Orange</option>
                 <option value="purple">Purple</option>
             </select>
-            <button id="modeToggle" class="mode-toggle" aria-label="Toggle dark and light mode">☀ / ☾</button>
+            <button id="modeToggle" class="mode-toggle">☀ Light Mode</button>
         </div>
     </header>
 
     <main>
         <section class="hero section" id="home">
             <div class="hero-content">
-                <div class="intro-label">
-                    <span class="status-dot"></span>
-                    ZAijan MARCUS
-                </div>
+                <div class="intro-label"><span class="status-dot"></span> ZAIJAN MARCUS</div>
                 <p class="eyebrow">BSIT STUDENT · ASPIRING IT SUPPORT PROFESSIONAL</p>
                 <h1>Learning today.<br>Building a <span class="gradient-text">better tomorrow.</span></h1>
                 <p class="hero-description">
-                    Hello! I'm Zaijan Marcus, a Bachelor of Science in Information Technology student
-                    who enjoys learning about programming, computers, and technology.
+                    Hello! I'm Zaijan Marcus, a Bachelor of Science in Information Technology
+                    student interested in programming, computer systems, and technology.
                     I'm building my skills one project at a time.
                 </p>
-
                 <div class="hero-buttons">
-                    <a href="#projects" class="button button-primary">Explore My Work <span>↗</span></a>
-                    <a href="#contact" class="button button-outline">Contact Me <span>→</span></a>
+                    <a href="#projects" class="button button-primary">Explore My Work ↗</a>
+                    <a href="#contact" class="button button-outline">Contact Me ✉</a>
                 </div>
-
                 <p class="live-time">LOCAL TIME <span id="currentTime">Loading...</span></p>
             </div>
 
@@ -68,45 +62,38 @@
                 <div class="avatar-circle"><span>Z</span><span>M</span></div>
                 <div class="floating-card">
                     <span class="status-dot"></span>
-                    <div>
-                        <strong>Always Learning</strong>
-                        <p>One step closer to my goal.</p>
-                    </div>
+                    <div><strong>Always Learning</strong><p>One step closer to my goal.</p></div>
                 </div>
                 <div class="code-chip">&lt; Hello World /&gt;</div>
             </div>
         </section>
 
-        <section class="section about-section" id="about">
+        <section class="section" id="about">
             <div class="section-heading">
-                <div>
-                    <p class="eyebrow">GET TO KNOW ME</p>
-                    <h2>About <span class="gradient-text">Me</span></h2>
-                </div>
+                <div><p class="eyebrow">GET TO KNOW ME</p><h2>About <span class="gradient-text">Me</span></h2></div>
                 <span class="section-number">01 / ABOUT</span>
             </div>
 
             <div class="about-grid">
                 <article class="panel about-main">
                     <span class="panel-icon">⌘</span>
-                    <h3>A student with a goal</h3>
+                    <h3>A Student with a Goal</h3>
                     <p>
                         I am currently studying Information Technology and learning how software,
-                        computer systems, and networks work. I enjoy trying new things, practicing
-                        coding, and improving through hands-on activities.
+                        computer systems, and networks work. I enjoy practicing coding, exploring
+                        technology, and improving through hands-on activities.
                     </p>
                     <p>
-                        My goal is to become an IT Support professional and eventually work aboard
-                        a ship as an IT seafarer. I know I still have a lot to learn, so I am
-                        focused on gaining useful skills and real experience.
+                        My goal is to become an IT Support professional and eventually work
+                        aboard a ship as an IT seafarer. I want to gain practical skills in
+                        troubleshooting, networking, and computer maintenance.
                     </p>
                     <button class="text-button" id="readMoreBtn">Read More ↗</button>
-                    <div class="extra-info" id="extraInfo" hidden>
+                    <div id="extraInfo" hidden>
                         <p>
                             Outside my studies, I enjoy online chess, gaming, fitness, and anime.
-                            These interests help me relax, stay curious, and keep learning.
-                            I believe patience, practice, and a willingness to learn can help me
-                            grow into a dependable IT professional.
+                            I believe that patience, practice, and a willingness to learn will
+                            help me grow into a dependable IT professional.
                         </p>
                     </div>
                 </article>
@@ -128,7 +115,7 @@
                 <div>
                     <p class="eyebrow">WHAT I'M LEARNING</p>
                     <h2>My <span class="gradient-text">Skills</span></h2>
-                    <p class="section-subtitle">My current programming skill levels as I continue to practice.</p>
+                    <p class="section-subtitle">My current programming skills as I continue to practice.</p>
                 </div>
                 <span class="section-number">02 / SKILLS</span>
             </div>
@@ -142,7 +129,7 @@
                 <article class="panel skill-card">
                     <div class="skill-top"><span class="skill-icon cpp-icon">C+</span><h3>C++</h3><strong>39%</strong></div>
                     <div class="progress-track"><div class="progress-fill" style="--progress:39%"></div></div>
-                    <p>Practicing logic and basic programming.</p>
+                    <p>Practicing programming logic and syntax.</p>
                 </article>
                 <article class="panel skill-card">
                     <div class="skill-top"><span class="skill-icon c-icon">C</span><h3>C</h3><strong>49%</strong></div>
@@ -162,9 +149,9 @@
                     <p class="eyebrow">MY CAREER DIRECTION</p>
                     <h3>From IT Student to IT Seafarer</h3>
                     <p>
-                        I aim to become an IT Support professional and eventually work aboard a ship
-                        as an IT seafarer. I want to improve my skills in troubleshooting, computer
-                        maintenance, networking, and technical support.
+                        I aim to become an IT Support professional and eventually work aboard
+                        a ship as an IT seafarer. I want to develop my skills in troubleshooting,
+                        networking, computer maintenance, and technical support.
                     </p>
                 </div>
             </div>
@@ -175,7 +162,7 @@
                 <div>
                     <p class="eyebrow">MY LEARNING JOURNEY</p>
                     <h2>Featured <span class="gradient-text">Projects</span></h2>
-                    <p class="section-subtitle">A few examples of projects I have worked on while studying.</p>
+                    <p class="section-subtitle">Projects I have worked on during my studies.</p>
                 </div>
                 <span class="section-number">03 / PROJECTS</span>
             </div>
@@ -186,9 +173,9 @@
                     <div class="project-body">
                         <span class="project-type">WEB DEVELOPMENT</span>
                         <h3>Personal Portfolio</h3>
-                        <p>A responsive website presenting my background, skills, goals, and projects.</p>
+                        <p>A responsive website showcasing my background, skills, and work.</p>
                         <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-                        <a href="#home" class="project-link">View Portfolio <span>↗</span></a>
+                        <a href="#home" class="project-link">View Portfolio ↗</a>
                     </div>
                 </article>
 
@@ -197,9 +184,9 @@
                     <div class="project-body">
                         <span class="project-type">PROGRAMMING</span>
                         <h3>Student Registration System</h3>
-                        <p>A practice system for registration, login, profile viewing, and basic account actions.</p>
+                        <p>A practice system for registration, login, and profile viewing.</p>
                         <div class="tags"><span>C++</span><span>Logic</span><span>Console</span></div>
-                        <a href="#contact" class="project-link">Ask About Project <span>↗</span></a>
+                        <a href="#contact" class="project-link">Ask About Project ↗</a>
                     </div>
                 </article>
 
@@ -208,32 +195,50 @@
                     <div class="project-body">
                         <span class="project-type">WEB APPLICATION</span>
                         <h3>Reminder Clock</h3>
-                        <p>A personal clock concept with time display, reminders, and interactive controls.</p>
+                        <p>A clock concept with time display, reminders, and interactive controls.</p>
                         <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-                        <a href="#contact" class="project-link">Ask About Project <span>↗</span></a>
+                        <a href="#contact" class="project-link">Ask About Project ↗</a>
                     </div>
                 </article>
             </div>
-            <p class="project-note">Note: Replace the project links with your actual project URLs when available.</p>
+            <p class="project-note">Replace sample project links with your actual project URLs when available.</p>
         </section>
 
-        <section class="section contact-section" id="contact">
+        <section class="section" id="contact">
             <div class="section-heading">
-                <div>
-                    <p class="eyebrow">LET'S CONNECT</p>
-                    <h2>Contact <span class="gradient-text">Me</span></h2>
-                </div>
+                <div><p class="eyebrow">LET'S CONNECT</p><h2>Contact <span class="gradient-text">Me</span></h2></div>
                 <span class="section-number">04 / CONTACT</span>
             </div>
 
             <div class="contact-panel panel">
                 <div>
+                    <p class="eyebrow">GET IN TOUCH</p>
                     <h3>Have a question or want to connect?</h3>
-                    <p>Feel free to reach out about my projects, learning journey, or future opportunities.</p>
+                    <p>Feel free to contact me about my projects, learning journey, or future opportunities.</p>
+                    <a class="button button-primary email-cta"
+                       href="mailto:zaijanmarcusepodrido@gmail.com?subject=Portfolio%20Inquiry&body=Hello%20Zaijan%2C%0A%0AI%20visited%20your%20portfolio%20and%20would%20like%20to%20connect.%0A%0A">
+                        Email Me Now ↗
+                    </a>
                 </div>
+
                 <div class="contact-details">
-                    <div class="contact-item"><span>✉</span><div><small>EMAIL ADDRESS</small><p id="emailText">your.email@example.com</p></div><button class="copy-button" id="copyEmailBtn">Copy</button></div>
-                    <div class="contact-item"><span>☎</span><div><small>PHONE NUMBER</small><p id="phoneText">Add your phone number</p></div></div>
+                    <div class="contact-item">
+                        <span>✉</span>
+                        <div>
+                            <small>EMAIL ADDRESS</small>
+                            <a class="contact-link" href="mailto:zaijanmarcusepodrido@gmail.com" id="emailText">zaijanmarcusepodrido@gmail.com</a>
+                        </div>
+                        <button class="copy-button" id="copyEmailBtn">Copy</button>
+                    </div>
+
+                    <div class="contact-item">
+                        <span>☎</span>
+                        <div>
+                            <small>PHONE NUMBER</small>
+                            <a class="contact-link" href="tel:+639618141359" id="phoneText">09618141359</a>
+                        </div>
+                        <a class="copy-button call-button" href="tel:+639618141359">Call</a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -247,4 +252,5 @@
 
     <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
 </body>
-</html>
+    </html>
+    

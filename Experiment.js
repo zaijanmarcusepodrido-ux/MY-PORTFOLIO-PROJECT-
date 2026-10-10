@@ -20,7 +20,10 @@ modeToggle.addEventListener("click", function () {
 
 menuToggle.addEventListener("click", function () {
     navLinks.classList.toggle("open");
-    menuToggle.textContent = navLinks.classList.contains("open") ? "✕" : "☰";
+
+    menuToggle.textContent = navLinks.classList.contains("open")
+        ? "✕"
+        : "☰";
 });
 
 document.querySelectorAll(".nav-link").forEach(function (link) {
@@ -37,7 +40,7 @@ document.querySelectorAll(".nav-link").forEach(function (link) {
 });
 
 document.getElementById("welcomeBtn").addEventListener("click", function () {
-    alert("Hello! Thank you for visiting my portfolio. I hope you enjoy exploring my projects and learning journey!");
+    alert("Hello! Thank you for visiting my portfolio. Feel free to contact me about my projects and learning journey!");
 });
 
 const readMoreBtn = document.getElementById("readMoreBtn");
@@ -95,23 +98,27 @@ backTop.addEventListener("click", function () {
 });
 
 document.getElementById("copyEmailBtn").addEventListener("click", async function () {
-    const email = document.getElementById("emailText").textContent.trim();
-
-    if (email === "your.email@example.com") {
-        alert("Please replace the sample email with your actual email address first.");
-        return;
-    }
+    const email = "zaijanmarcusepodrido@gmail.com";
 
     try {
         await navigator.clipboard.writeText(email);
         this.textContent = "Copied!";
     } catch (error) {
-        alert("Unable to copy automatically. Please select and copy the email address.");
+        const tempInput = document.createElement("textarea");
+        tempInput.value = email;
+        tempInput.style.position = "fixed";
+        tempInput.style.opacity = "0";
+
+        document.body.appendChild(tempInput);
+        tempInput.select();
+
+        const copied = document.execCommand("copy");
+        tempInput.remove();
+
+        this.textContent = copied ? "Copied!" : "Copy Failed";
     }
 
     setTimeout(() => {
         this.textContent = "Copy";
     }, 2000);
 });
-
-

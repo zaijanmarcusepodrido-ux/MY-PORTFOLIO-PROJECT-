@@ -6,54 +6,31 @@
     --surface-hover: #15302e;
     --text: #edf8f5;
     --muted: #9db4b0;
-    --border: rgba(140, 190, 177, 0.15);
+    --border: rgba(140, 190, 177, 0.16);
     --accent: #21d6bd;
     --accent-two: #b8f45b;
     --shadow: 0 12px 35px rgba(0, 0, 0, 0.2);
-    --nav-bg: rgba(7, 20, 20, 0.88);
+    --nav-bg: rgba(7, 20, 20, 0.9);
 }
 
 body.light-mode {
     --bg: #f0f7f5;
     --bg-secondary: #e5f0ed;
-    --surface: #ffffff;
+    --surface: #fff;
     --surface-hover: #e9f8f2;
     --text: #17312c;
     --muted: #5f7770;
     --border: rgba(20, 80, 66, 0.15);
     --shadow: 0 12px 35px rgba(24, 65, 53, 0.1);
-    --nav-bg: rgba(240, 247, 245, 0.92);
+    --nav-bg: rgba(240, 247, 245, 0.94);
 }
 
-body[data-theme="green"] {
-    --accent: #24d36a;
-    --accent-two: #c1ff72;
-}
-
-body[data-theme="sky"] {
-    --accent: #38bdf8;
-    --accent-two: #a5f3fc;
-}
-
-body[data-theme="pink"] {
-    --accent: #f472b6;
-    --accent-two: #fda4af;
-}
-
-body[data-theme="black"] {
-    --accent: #d1d5db;
-    --accent-two: #ffffff;
-}
-
-body[data-theme="orange"] {
-    --accent: #fb923c;
-    --accent-two: #facc15;
-}
-
-body[data-theme="purple"] {
-    --accent: #a78bfa;
-    --accent-two: #e9a8ff;
-}
+body[data-theme="green"] { --accent: #24d36a; --accent-two: #c1ff72; }
+body[data-theme="sky"] { --accent: #38bdf8; --accent-two: #a5f3fc; }
+body[data-theme="pink"] { --accent: #f472b6; --accent-two: #fda4af; }
+body[data-theme="black"] { --accent: #d1d5db; --accent-two: #fff; }
+body[data-theme="orange"] { --accent: #fb923c; --accent-two: #facc15; }
+body[data-theme="purple"] { --accent: #a78bfa; --accent-two: #e9a8ff; }
 
 * {
     box-sizing: border-box;
@@ -71,8 +48,8 @@ body {
     background: var(--bg);
     color: var(--text);
     line-height: 1.7;
-    transition: background 0.3s, color 0.3s;
     overflow-x: hidden;
+    transition: background .3s, color .3s;
 }
 
 body::before {
@@ -81,12 +58,9 @@ body::before {
     inset: 0;
     z-index: -1;
     pointer-events: none;
-    background-image:
-        linear-gradient(var(--border) 1px, transparent 1px),
-        linear-gradient(90deg, var(--border) 1px, transparent 1px);
+    background-image: linear-gradient(var(--border) 1px, transparent 1px), linear-gradient(90deg, var(--border) 1px, transparent 1px);
     background-size: 45px 45px;
-    opacity: 0.15;
-    mask-image: linear-gradient(to bottom, black, transparent 80%);
+    opacity: .15;
 }
 
 a {
@@ -113,56 +87,54 @@ button:focus-visible, a:focus-visible, select:focus-visible {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 25px;
+    gap: 22px;
     position: sticky;
     top: 0;
     z-index: 1000;
     background: var(--nav-bg);
     border-bottom: 1px solid var(--border);
-    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.12);
+    box-shadow: 0 5px 25px rgba(0, 0, 0, .12);
     backdrop-filter: blur(18px);
 }
 
 .logo {
-    font-size: 1.25rem;
+    font-size: 1.2rem;
     font-weight: 800;
-    letter-spacing: -0.8px;
+    letter-spacing: -.8px;
     white-space: nowrap;
 }
 
-.logo > span:first-child {
+.logo > span:first-child, .logo-end {
     color: var(--accent);
-    margin-right: 7px;
 }
 
-.logo-end {
-    color: var(--accent);
+.logo > span:first-child {
+    margin-right: 7px;
 }
 
 .nav-links {
     display: flex;
     align-items: center;
-    gap: 27px;
+    gap: 25px;
 }
 
 .nav-link {
-    font-size: 0.87rem;
     color: var(--muted);
+    font-size: .86rem;
     font-weight: 600;
-    position: relative;
     padding: 10px 0;
-    transition: color 0.2s;
+    position: relative;
 }
 
 .nav-link::after {
     content: "";
     position: absolute;
     height: 2px;
+    width: 0;
     bottom: 2px;
     left: 0;
-    width: 0;
     background: var(--accent);
-    transition: width 0.25s;
+    transition: width .25s;
 }
 
 .nav-link:hover, .nav-link.active {
@@ -175,18 +147,18 @@ button:focus-visible, a:focus-visible, select:focus-visible {
 
 .nav-controls {
     display: flex;
-    gap: 8px;
     align-items: center;
+    gap: 8px;
 }
 
 .nav-controls select, .mode-toggle {
+    padding: 9px 10px;
     border: 1px solid var(--border);
-    color: var(--text);
-    background: var(--surface);
     border-radius: 10px;
-    padding: 9px 11px;
+    background: var(--surface);
+    color: var(--text);
     cursor: pointer;
-    font-size: 0.78rem;
+    font-size: .75rem;
 }
 
 .nav-controls select {
@@ -198,33 +170,27 @@ button:focus-visible, a:focus-visible, select:focus-visible {
     color: var(--text);
 }
 
-.mode-toggle {
-    white-space: nowrap;
-}
-
 .menu-toggle {
     display: none;
-    background: transparent;
     border: 0;
+    background: transparent;
     color: var(--accent);
     font-size: 1.5rem;
     cursor: pointer;
 }
 
 .section {
-    padding: 95px 8%;
     max-width: 1600px;
     margin: auto;
+    padding: 90px 8%;
 }
 
 .hero {
     min-height: 540px;
     display: grid;
-    grid-template-columns: 1.2fr 0.8fr;
+    grid-template-columns: 1.2fr .8fr;
     align-items: center;
-    gap: 50px;
-    padding-top: 75px;
-    padding-bottom: 80px;
+    gap: 45px;
 }
 
 .intro-label {
@@ -232,7 +198,7 @@ button:focus-visible, a:focus-visible, select:focus-visible {
     align-items: center;
     gap: 10px;
     color: var(--accent);
-    font-size: 0.9rem;
+    font-size: .9rem;
     font-weight: 800;
     letter-spacing: 1.8px;
 }
@@ -248,10 +214,10 @@ button:focus-visible, a:focus-visible, select:focus-visible {
 }
 
 .eyebrow {
-    font-size: 0.7rem;
+    color: var(--accent);
+    font-size: .7rem;
     font-weight: 700;
     letter-spacing: 2px;
-    color: var(--accent);
     margin: 12px 0;
 }
 
@@ -274,7 +240,7 @@ button:focus-visible, a:focus-visible, select:focus-visible {
 .hero-description {
     max-width: 590px;
     color: var(--muted);
-    font-size: 0.96rem;
+    font-size: .95rem;
 }
 
 .hero-buttons {
@@ -289,19 +255,19 @@ button:focus-visible, a:focus-visible, select:focus-visible {
     display: inline-flex;
     justify-content: center;
     align-items: center;
-    gap: 15px;
+    gap: 12px;
     padding: 11px 19px;
-    border-radius: 10px;
-    font-size: 0.83rem;
-    font-weight: 700;
     border: 1px solid transparent;
+    border-radius: 10px;
+    font-size: .82rem;
+    font-weight: 700;
     cursor: pointer;
-    transition: transform 0.2s, box-shadow 0.2s, background 0.2s;
+    transition: transform .2s, box-shadow .2s, background .2s;
 }
 
 .button:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 25px color-mix(in srgb, var(--accent) 20%, transparent);
+    box-shadow: 0 8px 25px rgba(33, 214, 189, .15);
 }
 
 .button-primary {
@@ -321,7 +287,7 @@ button:focus-visible, a:focus-visible, select:focus-visible {
 
 .live-time {
     color: var(--muted);
-    font-size: 0.68rem;
+    font-size: .68rem;
     letter-spacing: 1px;
     margin-top: 30px;
 }
@@ -352,7 +318,7 @@ button:focus-visible, a:focus-visible, select:focus-visible {
     font-size: clamp(4rem, 8vw, 6.5rem);
     font-weight: 800;
     letter-spacing: -8px;
-    box-shadow: 0 0 70px color-mix(in srgb, var(--accent) 12%, transparent), inset 0 0 35px var(--border);
+    box-shadow: 0 0 70px rgba(33, 214, 189, .12), inset 0 0 35px var(--border);
     animation: float 5s ease-in-out infinite;
 }
 
@@ -367,14 +333,14 @@ button:focus-visible, a:focus-visible, select:focus-visible {
     aspect-ratio: 1;
     border: 1px dashed var(--accent);
     border-radius: 50%;
-    opacity: 0.5;
+    opacity: .5;
     animation: rotate 24s linear infinite;
 }
 
 .orbit-two {
     width: 365px;
     border-color: var(--accent-two);
-    opacity: 0.22;
+    opacity: .22;
     animation-direction: reverse;
 }
 
@@ -393,13 +359,13 @@ button:focus-visible, a:focus-visible, select:focus-visible {
 }
 
 .floating-card strong {
-    font-size: 0.8rem;
+    font-size: .8rem;
     color: var(--accent);
 }
 
 .floating-card p {
     color: var(--muted);
-    font-size: 0.68rem;
+    font-size: .68rem;
 }
 
 .code-chip {
@@ -411,7 +377,7 @@ button:focus-visible, a:focus-visible, select:focus-visible {
     color: var(--accent);
     border-radius: 8px;
     padding: 8px 12px;
-    font-size: 0.75rem;
+    font-size: .75rem;
     box-shadow: var(--shadow);
 }
 
@@ -444,21 +410,15 @@ button:focus-visible, a:focus-visible, select:focus-visible {
 
 .section-number {
     color: var(--muted);
-    font-size: 0.7rem;
+    font-size: .7rem;
     letter-spacing: 1.5px;
     white-space: nowrap;
 }
 
 .section-subtitle {
     color: var(--muted);
-    font-size: 0.85rem;
+    font-size: .85rem;
     margin-top: 8px;
-}
-
-.about-grid {
-    display: grid;
-    grid-template-columns: 1.15fr 0.85fr;
-    gap: 22px;
 }
 
 .panel {
@@ -466,11 +426,17 @@ button:focus-visible, a:focus-visible, select:focus-visible {
     border: 1px solid var(--border);
     border-radius: 16px;
     box-shadow: var(--shadow);
-    transition: transform 0.25s, border-color 0.25s, background 0.25s;
+    transition: transform .25s, border-color .25s;
 }
 
 .panel:hover {
-    border-color: color-mix(in srgb, var(--accent) 45%, var(--border));
+    border-color: var(--accent);
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1.15fr .85fr;
+    gap: 22px;
 }
 
 .about-main, .details-panel {
@@ -480,10 +446,10 @@ button:focus-visible, a:focus-visible, select:focus-visible {
 .panel-icon {
     width: 43px;
     height: 43px;
-    border-radius: 12px;
     display: grid;
     place-items: center;
-    background: color-mix(in srgb, var(--accent) 15%, transparent);
+    border-radius: 12px;
+    background: var(--surface-hover);
     color: var(--accent);
     font-size: 1.4rem;
 }
@@ -495,7 +461,7 @@ button:focus-visible, a:focus-visible, select:focus-visible {
 
 .panel p {
     color: var(--muted);
-    font-size: 0.85rem;
+    font-size: .85rem;
 }
 
 .about-main > p {
@@ -511,11 +477,11 @@ button:focus-visible, a:focus-visible, select:focus-visible {
     cursor: pointer;
 }
 
-.extra-info {
+#extraInfo {
     padding-top: 15px;
 }
 
-.extra-info[hidden] {
+#extraInfo[hidden] {
     display: none;
 }
 
@@ -534,11 +500,11 @@ button:focus-visible, a:focus-visible, select:focus-visible {
 
 .detail-row span {
     color: var(--muted);
-    font-size: 0.74rem;
+    font-size: .74rem;
 }
 
 .detail-row strong {
-    font-size: 0.85rem;
+    font-size: .85rem;
     overflow-wrap: anywhere;
 }
 
@@ -578,7 +544,7 @@ button:focus-visible, a:focus-visible, select:focus-visible {
 }
 
 .skill-top strong {
-    font-size: 0.9rem;
+    font-size: .9rem;
     color: var(--accent-two);
 }
 
@@ -619,7 +585,7 @@ button:focus-visible, a:focus-visible, select:focus-visible {
 
 .skill-card > p {
     margin-top: 14px;
-    font-size: 0.78rem;
+    font-size: .78rem;
 }
 
 .goal-panel {
@@ -637,7 +603,7 @@ button:focus-visible, a:focus-visible, select:focus-visible {
     display: grid;
     place-items: center;
     color: var(--accent);
-    background: color-mix(in srgb, var(--accent) 13%, transparent);
+    background: var(--surface-hover);
     border-radius: 14px;
     font-size: 2rem;
 }
@@ -667,6 +633,7 @@ button:focus-visible, a:focus-visible, select:focus-visible {
     font-size: 3rem;
     font-weight: 800;
     border-bottom: 1px solid var(--border);
+    background: radial-gradient(circle, var(--surface-hover), var(--bg-secondary));
 }
 
 .project-art span {
@@ -675,21 +642,9 @@ button:focus-visible, a:focus-visible, select:focus-visible {
     border-radius: 20px;
     display: grid;
     place-items: center;
-    background: color-mix(in srgb, var(--accent) 15%, transparent);
+    background: var(--surface-hover);
     color: var(--accent);
-    border: 1px solid color-mix(in srgb, var(--accent) 30%, transparent);
-}
-
-.art-one {
-    background: radial-gradient(circle at center, color-mix(in srgb, var(--accent) 13%, var(--surface)), var(--bg-secondary));
-}
-
-.art-two {
-    background: radial-gradient(circle at center, color-mix(in srgb, var(--accent-two) 10%, var(--surface)), var(--bg-secondary));
-}
-
-.art-three {
-    background: radial-gradient(circle at center, color-mix(in srgb, var(--accent) 10%, var(--surface)), var(--bg-secondary));
+    border: 1px solid var(--border);
 }
 
 .project-body {
@@ -698,7 +653,7 @@ button:focus-visible, a:focus-visible, select:focus-visible {
 
 .project-type {
     color: var(--accent);
-    font-size: 0.64rem;
+    font-size: .64rem;
     letter-spacing: 1.3px;
     font-weight: 800;
 }
@@ -710,7 +665,7 @@ button:focus-visible, a:focus-visible, select:focus-visible {
 
 .project-body p {
     min-height: 72px;
-    font-size: 0.8rem;
+    font-size: .8rem;
 }
 
 .tags {
@@ -721,28 +676,25 @@ button:focus-visible, a:focus-visible, select:focus-visible {
 }
 
 .tags span {
-    font-size: 0.65rem;
+    font-size: .65rem;
     border: 1px solid var(--border);
     color: var(--accent);
-    background: color-mix(in srgb, var(--accent) 7%, transparent);
+    background: var(--surface-hover);
     border-radius: 20px;
     padding: 4px 9px;
 }
 
 .project-link {
     color: var(--accent-two);
-    font-size: 0.78rem;
+    font-size: .78rem;
     font-weight: 700;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    display: block;
     padding-top: 12px;
     border-top: 1px solid var(--border);
 }
 
 .project-note {
-    color: var(--muted);
-    font-size: 0.72rem;
+    font-size: .72rem;
     margin-top: 18px;
 }
 
@@ -758,6 +710,10 @@ button:focus-visible, a:focus-visible, select:focus-visible {
     font-size: 1.5rem;
     line-height: 1.35;
     margin: 0 0 12px;
+}
+
+.email-cta {
+    margin-top: 22px;
 }
 
 .contact-details {
@@ -786,15 +742,22 @@ button:focus-visible, a:focus-visible, select:focus-visible {
 }
 
 .contact-item small {
+    display: block;
     color: var(--muted);
-    font-size: 0.62rem;
+    font-size: .62rem;
     letter-spacing: 1px;
 }
 
-.contact-item p {
+.contact-link {
+    display: inline-block;
     color: var(--text);
-    font-size: 0.8rem;
+    font-size: .8rem;
     overflow-wrap: anywhere;
+    transition: color .2s;
+}
+
+.contact-link:hover {
+    color: var(--accent);
 }
 
 .copy-button {
@@ -804,7 +767,12 @@ button:focus-visible, a:focus-visible, select:focus-visible {
     color: var(--accent);
     background: transparent;
     cursor: pointer;
-    font-size: 0.72rem;
+    font-size: .72rem;
+    white-space: nowrap;
+}
+
+.call-button {
+    display: inline-block;
 }
 
 .footer {
@@ -818,7 +786,7 @@ button:focus-visible, a:focus-visible, select:focus-visible {
 }
 
 .footer p {
-    font-size: 0.72rem;
+    font-size: .72rem;
     color: var(--muted);
 }
 
@@ -838,7 +806,7 @@ button:focus-visible, a:focus-visible, select:focus-visible {
     opacity: 0;
     visibility: hidden;
     transform: translateY(10px);
-    transition: 0.25s;
+    transition: .25s;
     z-index: 900;
 }
 
@@ -848,47 +816,23 @@ button:focus-visible, a:focus-visible, select:focus-visible {
     transform: translateY(0);
 }
 
-@media (min-width: 1500px) {
-    .section {
-        padding-left: 10%;
-        padding-right: 10%;
-    }
-}
-
 @media (max-width: 1050px) {
-    .navbar {
-        padding: 14px 4%;
-        gap: 15px;
-    }
-
-    .nav-links {
-        gap: 16px;
-    }
-
-    .section {
-        padding-left: 5%;
-        padding-right: 5%;
-    }
-
-    .hero {
-        gap: 25px;
-    }
-
-    .projects-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
+    .navbar { padding: 14px 4%; gap: 15px; }
+    .nav-links { gap: 15px; }
+    .section { padding-left: 5%; padding-right: 5%; }
+    .hero { gap: 25px; }
+    .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 }
 
 @media (max-width: 760px) {
     .navbar {
         min-height: 70px;
+        padding: 12px 5%;
         flex-wrap: wrap;
         gap: 12px;
     }
 
-    .logo {
-        font-size: 1.05rem;
-    }
+    .logo { font-size: 1.05rem; }
 
     .menu-toggle {
         display: block;
@@ -896,14 +840,8 @@ button:focus-visible, a:focus-visible, select:focus-visible {
         margin-left: auto;
     }
 
-    .nav-controls {
-        order: 3;
-    }
-
-    .nav-controls select, .mode-toggle {
-        padding: 8px;
-        font-size: 0.7rem;
-    }
+    .nav-controls { order: 3; }
+    .nav-controls select, .mode-toggle { padding: 8px; font-size: .7rem; }
 
     .nav-links {
         order: 4;
@@ -915,26 +853,17 @@ button:focus-visible, a:focus-visible, select:focus-visible {
         padding: 10px 0;
     }
 
-    .nav-links.open {
-        display: flex;
-    }
+    .nav-links.open { display: flex; }
 
     .nav-link {
         padding: 10px 12px;
         border-radius: 8px;
     }
 
-    .nav-link:hover, .nav-link.active {
-        background: var(--surface);
-    }
+    .nav-link:hover, .nav-link.active { background: var(--surface); }
+    .nav-link::after { display: none; }
 
-    .nav-link::after {
-        display: none;
-    }
-
-    .section {
-        padding: 65px 6%;
-    }
+    .section { padding: 65px 6%; }
 
     .hero {
         grid-template-columns: 1fr;
@@ -942,123 +871,42 @@ button:focus-visible, a:focus-visible, select:focus-visible {
         gap: 15px;
     }
 
-    .hero h1 {
-        font-size: clamp(2.3rem, 8vw, 3.5rem);
-    }
-
-    .hero-visual {
-        min-height: 320px;
-    }
-
-    .about-grid, .contact-panel {
-        grid-template-columns: 1fr;
-    }
-
-    .section-heading {
-        align-items: flex-start;
-    }
-
-    .section-number {
-        display: none;
-    }
-
-    .projects-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .project-body {
-        padding: 16px;
-    }
-
-    .footer {
-        flex-direction: column;
-        align-items: flex-start;
-    }
+    .hero h1 { font-size: clamp(2.3rem, 8vw, 3.5rem); }
+    .hero-visual { min-height: 320px; }
+    .about-grid, .contact-panel { grid-template-columns: 1fr; }
+    .section-heading { align-items: flex-start; }
+    .section-number { display: none; }
+    .projects-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .project-body { padding: 16px; }
+    .footer { flex-direction: column; align-items: flex-start; }
 }
 
 @media (max-width: 480px) {
-    .navbar {
-        padding: 12px 5%;
-    }
-
-    .nav-controls select {
-        max-width: 110px;
-    }
-
-    .section {
-        padding: 55px 5%;
-    }
-
-    .hero-buttons {
-        flex-direction: column;
-    }
-
-    .hero-buttons .button {
-        width: 100%;
-    }
-
-    .hero-visual {
-        min-height: 290px;
-    }
-
-    .avatar-circle {
-        width: 190px;
-        font-size: 4.7rem;
-    }
-
-    .orbit {
-        width: 245px;
-    }
-
-    .orbit-two {
-        width: 280px;
-    }
-
-    .floating-card {
-        right: 0;
-        bottom: 2px;
-        padding: 9px 11px;
-    }
-
-    .code-chip {
-        top: 5px;
-    }
-
-    .skills-grid, .projects-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .about-main, .details-panel, .skill-card, .contact-panel {
-        padding: 20px;
-    }
-
-    .goal-panel {
-        flex-direction: column;
-        padding: 20px;
-    }
-
-    .project-art {
-        height: 130px;
-    }
-
-    .project-body p {
-        min-height: auto;
-    }
-
-    .contact-item {
-        padding: 10px;
-    }
-
-    .footer {
-        padding: 25px 5%;
-    }
+    .section { padding: 55px 5%; }
+    .nav-controls select { max-width: 110px; }
+    .hero-buttons { flex-direction: column; }
+    .hero-buttons .button { width: 100%; }
+    .hero-visual { min-height: 290px; }
+    .avatar-circle { width: 190px; font-size: 4.7rem; }
+    .orbit { width: 245px; }
+    .orbit-two { width: 280px; }
+    .floating-card { right: 0; bottom: 2px; padding: 9px 11px; }
+    .code-chip { top: 5px; }
+    .skills-grid, .projects-grid { grid-template-columns: 1fr; }
+    .about-main, .details-panel, .skill-card, .contact-panel { padding: 20px; }
+    .goal-panel { flex-direction: column; padding: 20px; }
+    .project-art { height: 130px; }
+    .project-body p { min-height: auto; }
+    .contact-item { padding: 10px; gap: 8px; }
+    .contact-link { font-size: .72rem; }
+    .footer { padding: 25px 5%; }
 }
 
 @media (prefers-reduced-motion: reduce) {
     *, *::before, *::after {
         scroll-behavior: auto !important;
-        animation-duration: 0.01ms !important;
+        animation-duration: .01ms !important;
         animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
+        transition-duration: .01ms !important;
     }
 }

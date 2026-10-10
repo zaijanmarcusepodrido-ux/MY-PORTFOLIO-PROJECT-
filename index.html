@@ -1,0 +1,250 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#071414">
+    <title>Zaijan Marcus | IT Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <header class="navbar">
+        <a href="#home" class="logo"><span>&lt;/&gt;</span> ZAIJAN<span class="logo-end">.dev</span></a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
+
+        <nav class="nav-links" id="navLinks">
+            <a href="#home" class="nav-link active">Home</a>
+            <a href="#about" class="nav-link">About</a>
+            <a href="#skills" class="nav-link">Skills</a>
+            <a href="#projects" class="nav-link">Projects</a>
+            <a href="#contact" class="nav-link">Contact</a>
+        </nav>
+
+        <div class="nav-controls">
+            <select id="themeColor" aria-label="Choose accent color">
+                <option value="teal">Teal + Lime</option>
+                <option value="green">Green</option>
+                <option value="sky">Sky Blue</option>
+                <option value="pink">Pink</option>
+                <option value="black">Black + Silver</option>
+                <option value="orange">Orange</option>
+                <option value="purple">Purple</option>
+            </select>
+            <button id="modeToggle" class="mode-toggle" aria-label="Toggle dark and light mode">☀ / ☾</button>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero section" id="home">
+            <div class="hero-content">
+                <div class="intro-label">
+                    <span class="status-dot"></span>
+                    ZAijan MARCUS
+                </div>
+                <p class="eyebrow">BSIT STUDENT · ASPIRING IT SUPPORT PROFESSIONAL</p>
+                <h1>Learning today.<br>Building a <span class="gradient-text">better tomorrow.</span></h1>
+                <p class="hero-description">
+                    Hello! I'm Zaijan Marcus, a Bachelor of Science in Information Technology student
+                    who enjoys learning about programming, computers, and technology.
+                    I'm building my skills one project at a time.
+                </p>
+
+                <div class="hero-buttons">
+                    <a href="#projects" class="button button-primary">Explore My Work <span>↗</span></a>
+                    <a href="#contact" class="button button-outline">Contact Me <span>→</span></a>
+                </div>
+
+                <p class="live-time">LOCAL TIME <span id="currentTime">Loading...</span></p>
+            </div>
+
+            <div class="hero-visual">
+                <div class="orbit orbit-one"></div>
+                <div class="orbit orbit-two"></div>
+                <div class="avatar-circle"><span>Z</span><span>M</span></div>
+                <div class="floating-card">
+                    <span class="status-dot"></span>
+                    <div>
+                        <strong>Always Learning</strong>
+                        <p>One step closer to my goal.</p>
+                    </div>
+                </div>
+                <div class="code-chip">&lt; Hello World /&gt;</div>
+            </div>
+        </section>
+
+        <section class="section about-section" id="about">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">GET TO KNOW ME</p>
+                    <h2>About <span class="gradient-text">Me</span></h2>
+                </div>
+                <span class="section-number">01 / ABOUT</span>
+            </div>
+
+            <div class="about-grid">
+                <article class="panel about-main">
+                    <span class="panel-icon">⌘</span>
+                    <h3>A student with a goal</h3>
+                    <p>
+                        I am currently studying Information Technology and learning how software,
+                        computer systems, and networks work. I enjoy trying new things, practicing
+                        coding, and improving through hands-on activities.
+                    </p>
+                    <p>
+                        My goal is to become an IT Support professional and eventually work aboard
+                        a ship as an IT seafarer. I know I still have a lot to learn, so I am
+                        focused on gaining useful skills and real experience.
+                    </p>
+                    <button class="text-button" id="readMoreBtn">Read More ↗</button>
+                    <div class="extra-info" id="extraInfo" hidden>
+                        <p>
+                            Outside my studies, I enjoy online chess, gaming, fitness, and anime.
+                            These interests help me relax, stay curious, and keep learning.
+                            I believe patience, practice, and a willingness to learn can help me
+                            grow into a dependable IT professional.
+                        </p>
+                    </div>
+                </article>
+
+                <article class="panel details-panel">
+                    <h3>Personal Details</h3>
+                    <div class="detail-row"><span>Name</span><strong>Zaijan Marcus</strong></div>
+                    <div class="detail-row"><span>Education</span><strong>BS Information Technology</strong></div>
+                    <div class="detail-row"><span>Field of Interest</span><strong>IT Support</strong></div>
+                    <div class="detail-row"><span>Career Goal</span><strong>IT Seafarer</strong></div>
+                    <div class="detail-row"><span>Current Status</span><strong class="available">Learning & Growing</strong></div>
+                    <button class="button button-outline full-button" id="welcomeBtn">Say Hello to Me!</button>
+                </article>
+            </div>
+        </section>
+
+        <section class="section" id="skills">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">WHAT I'M LEARNING</p>
+                    <h2>My <span class="gradient-text">Skills</span></h2>
+                    <p class="section-subtitle">My current programming skill levels as I continue to practice.</p>
+                </div>
+                <span class="section-number">02 / SKILLS</span>
+            </div>
+
+            <div class="skills-grid">
+                <article class="panel skill-card">
+                    <div class="skill-top"><span class="skill-icon html-icon">5</span><h3>HTML</h3><strong>45%</strong></div>
+                    <div class="progress-track"><div class="progress-fill" style="--progress:45%"></div></div>
+                    <p>Building the structure of web pages.</p>
+                </article>
+                <article class="panel skill-card">
+                    <div class="skill-top"><span class="skill-icon cpp-icon">C+</span><h3>C++</h3><strong>39%</strong></div>
+                    <div class="progress-track"><div class="progress-fill" style="--progress:39%"></div></div>
+                    <p>Practicing logic and basic programming.</p>
+                </article>
+                <article class="panel skill-card">
+                    <div class="skill-top"><span class="skill-icon c-icon">C</span><h3>C</h3><strong>49%</strong></div>
+                    <div class="progress-track"><div class="progress-fill" style="--progress:49%"></div></div>
+                    <p>Learning core programming concepts.</p>
+                </article>
+                <article class="panel skill-card">
+                    <div class="skill-top"><span class="skill-icon java-icon">J</span><h3>Java</h3><strong>20%</strong></div>
+                    <div class="progress-track"><div class="progress-fill" style="--progress:20%"></div></div>
+                    <p>Learning Java syntax and basic applications.</p>
+                </article>
+            </div>
+
+            <div class="panel goal-panel">
+                <div class="goal-symbol">⌁</div>
+                <div>
+                    <p class="eyebrow">MY CAREER DIRECTION</p>
+                    <h3>From IT Student to IT Seafarer</h3>
+                    <p>
+                        I aim to become an IT Support professional and eventually work aboard a ship
+                        as an IT seafarer. I want to improve my skills in troubleshooting, computer
+                        maintenance, networking, and technical support.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="projects">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">MY LEARNING JOURNEY</p>
+                    <h2>Featured <span class="gradient-text">Projects</span></h2>
+                    <p class="section-subtitle">A few examples of projects I have worked on while studying.</p>
+                </div>
+                <span class="section-number">03 / PROJECTS</span>
+            </div>
+
+            <div class="projects-grid">
+                <article class="panel project-card">
+                    <div class="project-art art-one"><span>&lt;/&gt;</span></div>
+                    <div class="project-body">
+                        <span class="project-type">WEB DEVELOPMENT</span>
+                        <h3>Personal Portfolio</h3>
+                        <p>A responsive website presenting my background, skills, goals, and projects.</p>
+                        <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                        <a href="#home" class="project-link">View Portfolio <span>↗</span></a>
+                    </div>
+                </article>
+
+                <article class="panel project-card">
+                    <div class="project-art art-two"><span>01</span></div>
+                    <div class="project-body">
+                        <span class="project-type">PROGRAMMING</span>
+                        <h3>Student Registration System</h3>
+                        <p>A practice system for registration, login, profile viewing, and basic account actions.</p>
+                        <div class="tags"><span>C++</span><span>Logic</span><span>Console</span></div>
+                        <a href="#contact" class="project-link">Ask About Project <span>↗</span></a>
+                    </div>
+                </article>
+
+                <article class="panel project-card">
+                    <div class="project-art art-three"><span>◷</span></div>
+                    <div class="project-body">
+                        <span class="project-type">WEB APPLICATION</span>
+                        <h3>Reminder Clock</h3>
+                        <p>A personal clock concept with time display, reminders, and interactive controls.</p>
+                        <div class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
+                        <a href="#contact" class="project-link">Ask About Project <span>↗</span></a>
+                    </div>
+                </article>
+            </div>
+            <p class="project-note">Note: Replace the project links with your actual project URLs when available.</p>
+        </section>
+
+        <section class="section contact-section" id="contact">
+            <div class="section-heading">
+                <div>
+                    <p class="eyebrow">LET'S CONNECT</p>
+                    <h2>Contact <span class="gradient-text">Me</span></h2>
+                </div>
+                <span class="section-number">04 / CONTACT</span>
+            </div>
+
+            <div class="contact-panel panel">
+                <div>
+                    <h3>Have a question or want to connect?</h3>
+                    <p>Feel free to reach out about my projects, learning journey, or future opportunities.</p>
+                </div>
+                <div class="contact-details">
+                    <div class="contact-item"><span>✉</span><div><small>EMAIL ADDRESS</small><p id="emailText">your.email@example.com</p></div><button class="copy-button" id="copyEmailBtn">Copy</button></div>
+                    <div class="contact-item"><span>☎</span><div><small>PHONE NUMBER</small><p id="phoneText">Add your phone number</p></div></div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <a href="#home" class="logo"><span>&lt;/&gt;</span> ZAIJAN<span class="logo-end">.dev</span></a>
+        <p>Designed and built by Zaijan Marcus.</p>
+        <p>© <span id="currentYear"></span> All rights reserved.</p>
+    </footer>
+
+    <button class="back-top" id="backTop" aria-label="Back to top">↑</button>
+</body>
+</html>
